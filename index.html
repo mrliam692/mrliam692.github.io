@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Westside Atlanta Towing | 770-276-0159 | 24/7 Tow Truck Atlanta</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --black: #0a0a0a;
+  --yellow: #FFD000;
+  --yellow-dark: #E6BB00;
+  --white: #ffffff;
+  --gray: #1a1a1a;
+  --gray-mid: #2a2a2a;
+  --gray-light: #888;
+  --red: #CC2200;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Barlow', sans-serif;
+  background: var(--black);
+  color: var(--white);
+  overflow-x: hidden;
+}
+
+/* ── TOPBAR ── */
+.topbar {
+  background: var(--yellow);
+  color: var(--black);
+  text-align: center;
+  padding: 8px;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+.topbar a { color: var(--black); text-decoration: none; }
+
+/* ── NAV ── */
+nav {
+  background: var(--black);
+  border-bottom: 3px solid var(--yellow);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  height: 70px;
+}
+
+.logo {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 26px;
+  color: var(--white);
+  line-height: 1;
+}
+
+.logo span { color: var(--yellow); }
+
+.nav-links {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+}
+
+.nav-links a {
+  color: var(--white);
+  text-decoration: none;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover { color: var(--yellow); }
+
+.nav-cta {
+  background: var(--yellow);
+  color: var(--black) !important;
+  padding: 10px 22px;
+  border-radius: 2px;
+  font-weight: 800 !important;
+}
+
+.nav-cta:hover { background: var(--yellow-dark); color: var(--black) !important; }
+
+/* ── HERO ── */
+.hero {
+  min-height: 90vh;
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%);
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  padding: 80px 40px;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 40px,
+    rgba(255,208,0,0.03) 40px,
+    rgba(255,208,0,0.03) 80px
+  );
+}
+
+.hero-badge {
+  position: absolute;
+  top: -80px; right: -80px;
+  width: 400px; height: 400px;
+  background: var(--yellow);
+  border-radius: 50%;
+  opacity: 0.05;
+}
+
+.hero-content {
+  max-width: 700px;
+  position: relative;
+  z-index: 2;
+  animation: fadeUp 0.8s ease both;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.hero-tag {
+  display: inline-block;
+  background: var(--yellow);
+  color: var(--black);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 800;
+  font-size: 13px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  margin-bottom: 24px;
+}
+
+.hero h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(56px, 8vw, 96px);
+  line-height: 0.95;
+  color: var(--white);
+  margin-bottom: 12px;
+}
+
+.hero h1 span { color: var(--yellow); }
+
+.hero-sub {
+  font-size: 18px;
+  color: var(--gray-light);
+  margin-bottom: 36px;
+  line-height: 1.6;
+  max-width: 520px;
+}
+
+.hero-btns {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  background: var(--yellow);
+  color: var(--black);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 800;
+  font-size: 18px;
+  letter-spacing: 1px;
+  padding: 16px 36px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: background 0.2s, transform 0.2s;
+  text-transform: uppercase;
+}
+
+.btn-primary:hover { background: var(--yellow-dark); transform: translateY(-2px); }
+
+.btn-outline {
+  background: transparent;
+  color: var(--white);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: 1px;
+  padding: 16px 36px;
+  border: 2px solid rgba(255,255,255,0.3);
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: border-color 0.2s, color 0.2s;
+  text-transform: uppercase;
+}
+
+.btn-outline:hover { border-color: var(--yellow); color: var(--yellow); }
+
+.hero-stats {
+  display: flex;
+  gap: 48px;
+  margin-top: 56px;
+  padding-top: 40px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  flex-wrap: wrap;
+}
+
+.stat-item { text-align: left; }
+
+.stat-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 48px;
+  color: var(--yellow);
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 13px;
+  color: var(--gray-light);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 4px;
+}
+
+/* ── TICKER ── */
+.ticker {
+  background: var(--yellow);
+  color: var(--black);
+  padding: 12px 0;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.ticker-inner {
+  display: inline-block;
+  animation: ticker 25s linear infinite;
+}
+
+@keyframes ticker {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.ticker-text {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 0 40px;
+}
+
+.ticker-dot { color: var(--red); margin: 0 8px; }
+
+/* ── SECTION COMMON ── */
+section { padding: 80px 40px; }
+
+.section-tag {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--yellow);
+  margin-bottom: 12px;
+}
+
+.section-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(36px, 5vw, 56px);
+  line-height: 1;
+  margin-bottom: 16px;
+}
+
+.section-sub {
+  color: var(--gray-light);
+  font-size: 16px;
+  line-height: 1.7;
+  max-width: 560px;
+}
+
+/* ── SERVICES ── */
+.services { background: var(--gray); }
+
+.services-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 56px;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2px;
+}
+
+.service-card {
+  background: var(--gray-mid);
+  padding: 36px 32px;
+  transition: background 0.3s, transform 0.3s;
+  position: relative;
+  overflow: hidden;
+  cursor: default;
+}
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0;
+  width: 0; height: 3px;
+  background: var(--yellow);
+  transition: width 0.4s ease;
+}
+
+.service-card:hover::before { width: 100%; }
+.service-card:hover { background: #333; transform: translateY(-4px); }
+
+.service-icon {
+  font-size: 36px;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.service-name {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  letter-spacing: 0.5px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.service-desc {
+  color: var(--gray-light);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* ── WHY US ── */
+.why { background: var(--black); }
+
+.why-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.why-left { }
+
+.why-right {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.why-item {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  padding: 24px;
+  border-left: 3px solid var(--yellow);
+  background: var(--gray);
+  transition: background 0.2s;
+}
+
+.why-item:hover { background: var(--gray-mid); }
+
+.why-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 40px;
+  color: var(--yellow);
+  opacity: 0.3;
+  line-height: 1;
+  min-width: 48px;
+}
+
+.why-content h3 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 6px;
+}
+
+.why-content p {
+  color: var(--gray-light);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* ── REVIEWS ── */
+.reviews { background: var(--gray); }
+
+.reviews-header { margin-bottom: 48px; }
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2px;
+  margin-bottom: 48px;
+}
+
+.review-card {
+  background: var(--gray-mid);
+  padding: 32px;
+  position: relative;
+}
+
+.review-stars {
+  color: var(--yellow);
+  font-size: 18px;
+  margin-bottom: 16px;
+  letter-spacing: 2px;
+}
+
+.review-text {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #ccc;
+  margin-bottom: 20px;
+  font-style: italic;
+}
+
+.review-author {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.review-source {
+  font-size: 12px;
+  color: var(--gray-light);
+  margin-top: 2px;
+}
+
+.rating-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--yellow);
+  color: var(--black);
+  padding: 14px 28px;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 800;
+  font-size: 16px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.rating-big {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 40px;
+  line-height: 1;
+}
+
+/* ── CTA BAND ── */
+.cta-band {
+  background: var(--yellow);
+  color: var(--black);
+  padding: 60px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 32px;
+}
+
+.cta-band h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(36px, 5vw, 60px);
+  line-height: 1;
+}
+
+.cta-band p {
+  font-size: 16px;
+  margin-top: 8px;
+  color: rgba(0,0,0,0.65);
+}
+
+.btn-dark {
+  background: var(--black);
+  color: var(--yellow);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 800;
+  font-size: 20px;
+  letter-spacing: 1px;
+  padding: 18px 40px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: background 0.2s;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.btn-dark:hover { background: #222; }
+
+/* ── CONTACT ── */
+.contact { background: var(--black); }
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.contact-info { display: flex; flex-direction: column; gap: 32px; }
+
+.contact-item {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.contact-icon {
+  font-size: 28px;
+  min-width: 40px;
+}
+
+.contact-label {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--yellow);
+  margin-bottom: 4px;
+}
+
+.contact-value {
+  font-size: 16px;
+  color: #ccc;
+  line-height: 1.5;
+}
+
+.contact-value a {
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 22px;
+}
+
+.contact-value a:hover { color: var(--yellow); }
+
+.map-embed {
+  width: 100%;
+  height: 320px;
+  border: 0;
+  filter: grayscale(100%) invert(90%);
+  border: 2px solid var(--gray-mid);
+}
+
+/* ── FOOTER ── */
+footer {
+  background: var(--gray);
+  border-top: 3px solid var(--yellow);
+  padding: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.footer-logo {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 28px;
+  color: var(--white);
+}
+
+.footer-logo span { color: var(--yellow); }
+
+.footer-links {
+  display: flex;
+  gap: 24px;
+  list-style: none;
+}
+
+.footer-links a {
+  color: var(--gray-light);
+  text-decoration: none;
+  font-size: 14px;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: color 0.2s;
+}
+
+.footer-links a:hover { color: var(--yellow); }
+
+.footer-copy {
+  color: var(--gray-light);
+  font-size: 13px;
+  width: 100%;
+  text-align: center;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  margin-top: 8px;
+}
+
+/* ── FLOATING CALL BTN ── */
+.float-call {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  background: var(--yellow);
+  color: var(--black);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 800;
+  font-size: 16px;
+  letter-spacing: 1px;
+  padding: 14px 24px;
+  text-decoration: none;
+  z-index: 999;
+  box-shadow: 0 8px 32px rgba(255,208,0,0.4);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  border-radius: 2px;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 8px 32px rgba(255,208,0,0.4); }
+  50% { box-shadow: 0 8px 48px rgba(255,208,0,0.7); }
+}
+
+.float-call:hover { transform: translateY(-3px); }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+  nav { padding: 0 20px; }
+  .nav-links { display: none; }
+  .hero { padding: 60px 20px; }
+  section { padding: 60px 20px; }
+  .why-grid, .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+  .hero-stats { gap: 28px; }
+  .cta-band { padding: 40px 20px; }
+  footer { padding: 28px 20px; flex-direction: column; text-align: center; }
+  .footer-links { flex-wrap: wrap; justify-content: center; }
+}
+</style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  🚨 24/7 Emergency Towing — Call Now: <a href="tel:7702760159"><strong>770-276-0159</strong></a> &nbsp;|&nbsp; Fast Response Times &nbsp;|&nbsp; Atlanta & Surrounding Areas
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">WESTSIDE <span>ATLANTA</span> TOWING</div>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#why">Why Us</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="tel:7702760159" class="nav-cta">📞 Call Now</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-badge"></div>
+  <div class="hero-content">
+    <div class="hero-tag">⚡ Atlanta's #1 Towing Service</div>
+    <h1>TOW TRUCK<br><span>ATLANTA</span><br>ON CALL 24/7</h1>
+    <p class="hero-sub">Fast, reliable, and affordable towing and roadside assistance anywhere in Atlanta, GA. We arrive quickly — because being stranded can't wait.</p>
+    <div class="hero-btns">
+      <a href="tel:7702760159" class="btn-primary">📞 Call 770-276-0159</a>
+      <a href="#services" class="btn-outline">View Services</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-item">
+        <div class="stat-num">10+</div>
+        <div class="stat-label">Years Experience</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">5.0</div>
+        <div class="stat-label">Google Rating</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">24/7</div>
+        <div class="stat-label">Always Available</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">277+</div>
+        <div class="stat-label">Google Reviews</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-inner">
+    <span class="ticker-text">🚛 Emergency Towing <span class="ticker-dot">●</span> Roadside Assistance <span class="ticker-dot">●</span> Car Lockout <span class="ticker-dot">●</span> Flat Tire Change <span class="ticker-dot">●</span> Battery Replacement <span class="ticker-dot">●</span> Motorcycle Towing <span class="ticker-dot">●</span> Heavy Duty Towing <span class="ticker-dot">●</span> Long Distance Towing <span class="ticker-dot">●</span> Low Clearance Towing <span class="ticker-dot">●</span> Semi Truck Towing <span class="ticker-dot">●</span></span>
+    <span class="ticker-text">🚛 Emergency Towing <span class="ticker-dot">●</span> Roadside Assistance <span class="ticker-dot">●</span> Car Lockout <span class="ticker-dot">●</span> Flat Tire Change <span class="ticker-dot">●</span> Battery Replacement <span class="ticker-dot">●</span> Motorcycle Towing <span class="ticker-dot">●</span> Heavy Duty Towing <span class="ticker-dot">●</span> Long Distance Towing <span class="ticker-dot">●</span> Low Clearance Towing <span class="ticker-dot">●</span> Semi Truck Towing <span class="ticker-dot">●</span></span>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="services-header">
+    <div>
+      <div class="section-tag">What We Do</div>
+      <div class="section-title">OUR SERVICES</div>
+      <p class="section-sub">From light-duty to heavy-duty, we handle it all — fast and professionally.</p>
+    </div>
+    <a href="tel:7702760159" class="btn-primary">Get Help Now</a>
+  </div>
+  <div class="services-grid">
+    <div class="service-card">
+      <span class="service-icon">🚨</span>
+      <div class="service-name">Emergency Towing</div>
+      <p class="service-desc">Stuck anywhere in Atlanta? We respond fast 24/7 to get you moving again.</p>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">🛣️</span>
+      <div class="service-name">Long Distance Towing</div>
+      <p class="service-desc">Need your vehicle moved across state lines? We've got you covered with safe long-haul towing.</p>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">🏎️</span>
+      <div class="service-name">Low Clearance Towing</div>
+      <p class="service-desc">Sports cars, lowered vehicles, and luxury cars handled with expert care and the right equipment.</p>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">🏍️</span>
+      <div class="service-name">Motorcycle Towing</div>
+      <p class="service-desc">Specialized motorcycle towing that keeps your bike secure and damage-free throughout transport.</p>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">🏗️</span>
+      <div class="service-name">Heavy Machinery Towing</div>
+      <p class="service-desc">Bobcats, construction equipment, and heavy machinery moved safely and efficiently.</p>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">🚛</span>
+      <div class="service-name">Semi Truck Towing</div>
+      <p class="service-desc">Heavy-duty semi truck towing and recovery when commercial vehicles break down on the road.</p>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">🔑</span>
+      <div class="service-name">Car Lockout Service</div>
+      <p class="service-desc">Locked out of your vehicle? Our technicians get you back in quickly without damaging your car.</p>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">🔋</span>
+      <div class="service-name">Battery Replacement</div>
+      <p class="service-desc">Dead battery? We'll come to you with a replacement and get you started on the spot.</p>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">🛞</span>
+      <div class="service-name">Tire Change Service</div>
+      <p class="service-desc">Flat tire on the highway? Our roadside pros will swap your tire fast so you can get moving.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="why" id="why">
+  <div class="why-grid">
+    <div class="why-left">
+      <div class="section-tag">Why Choose Us</div>
+      <div class="section-title">ATLANTA'S MOST TRUSTED TOW SERVICE</div>
+      <p class="section-sub">With over 10 years serving Atlanta, we've built a reputation for speed, reliability, and fair pricing that keeps customers coming back.</p>
+      <br><br>
+      <a href="tel:7702760159" class="btn-primary">📞 770-276-0159</a>
+    </div>
+    <div class="why-right">
+      <div class="why-item">
+        <div class="why-num">01</div>
+        <div class="why-content">
+          <h3>Always Open — 24 Hours a Day</h3>
+          <p>Breakdowns don't follow a schedule. We're available around the clock, every day of the year including holidays.</p>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="why-num">02</div>
+        <div class="why-content">
+          <h3>Fast Response Times</h3>
+          <p>Our local Atlanta coverage means we get to you faster than out-of-area services. Every minute counts when you're stranded.</p>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="why-num">03</div>
+        <div class="why-content">
+          <h3>Lowest Prices in the Area</h3>
+          <p>We believe in honest, upfront pricing. No hidden fees, no surprises — just fair rates for professional service.</p>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="why-num">04</div>
+        <div class="why-content">
+          <h3>10+ Years of Experience</h3>
+          <p>Hundreds of satisfied customers and a perfect 5-star Google rating back up our commitment to excellence.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews" id="reviews">
+  <div class="reviews-header">
+    <div class="section-tag">What Customers Say</div>
+    <div class="section-title">5-STAR REVIEWS</div>
+  </div>
+  <div class="reviews-grid">
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"Great service — showed very good customer service for the elderly. I felt safe and taken care of the entire time."</p>
+      <div class="review-author">Sandra Allen</div>
+      <div class="review-source">Google Review</div>
+    </div>
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"Serviced me quickly and had the lowest prices in the area! I called around and nobody could beat their price or their speed."</p>
+      <div class="review-author">Aaron Lee</div>
+      <div class="review-source">Google Review</div>
+    </div>
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"Got my truck in a timely manner and got me home safely at a good price. Highly recommend for anyone in Atlanta needing a tow."</p>
+      <div class="review-author">BreezyGames</div>
+      <div class="review-source">Google Review</div>
+    </div>
+  </div>
+  <div class="rating-badge">
+    <div class="rating-big">5.0</div>
+    <div>
+      <div style="font-size:20px; letter-spacing:3px;">★★★★★</div>
+      <div style="font-size:13px; margin-top:2px;">277+ Google Reviews</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<div class="cta-band">
+  <div>
+    <h2>STRANDED? WE'RE ON OUR WAY.</h2>
+    <p>Call us now — fast response, fair pricing, professional service.</p>
+  </div>
+  <a href="tel:7702760159" class="btn-dark">📞 770-276-0159</a>
+</div>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="section-tag">Find Us</div>
+  <div class="section-title" style="margin-bottom:48px;">CONTACT & LOCATION</div>
+  <div class="contact-grid">
+    <div class="contact-info">
+      <div class="contact-item">
+        <div class="contact-icon">📞</div>
+        <div>
+          <div class="contact-label">Phone</div>
+          <div class="contact-value"><a href="tel:7702760159">770-276-0159</a></div>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">📍</div>
+        <div>
+          <div class="contact-label">Address</div>
+          <div class="contact-value">754 Paines Ave NW, Suite 101<br>Atlanta, GA 30318</div>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">🕐</div>
+        <div>
+          <div class="contact-label">Hours</div>
+          <div class="contact-value">Open 24 Hours — 7 Days a Week<br>Including Holidays</div>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">🌐</div>
+        <div>
+          <div class="contact-label">Website</div>
+          <div class="contact-value"><a href="https://towingservicesatlantaga.com" target="_blank" style="font-size:16px;">towingservicesatlantaga.com</a></div>
+        </div>
+      </div>
+      <a href="tel:7702760159" class="btn-primary" style="margin-top:16px;">📞 Call For Immediate Help</a>
+    </div>
+    <div>
+      <a href="https://www.google.com/maps/dir/?api=1&destination=754+Paines+Ave+NW+STE+101+Atlanta+GA+30318" target="_blank" style="text-decoration:none;">
+        <div style="
+          width:100%;
+          height:320px;
+          background: var(--gray);
+          border: 2px solid var(--gray-mid);
+          display:flex;
+          flex-direction:column;
+          align-items:center;
+          justify-content:center;
+          gap:20px;
+          cursor:pointer;
+          transition: border-color 0.3s;
+          position:relative;
+          overflow:hidden;
+        "
+        onmouseover="this.style.borderColor='var(--yellow)'"
+        onmouseout="this.style.borderColor='var(--gray-mid)'"
+        >
+          <!-- Grid pattern background -->
+          <div style="
+            position:absolute; top:0; left:0; width:100%; height:100%;
+            background-image: linear-gradient(rgba(255,208,0,0.05) 1px, transparent 1px),
+                              linear-gradient(90deg, rgba(255,208,0,0.05) 1px, transparent 1px);
+            background-size: 40px 40px;
+          "></div>
+          <!-- Pin icon -->
+          <div style="font-size:52px; position:relative; z-index:2;">📍</div>
+          <div style="position:relative; z-index:2; text-align:center;">
+            <div style="font-family:'Barlow Condensed',sans-serif; font-weight:800; font-size:20px; letter-spacing:1px; color:var(--white); text-transform:uppercase; margin-bottom:8px;">754 Paines Ave NW, STE 101</div>
+            <div style="font-size:15px; color:var(--gray-light); margin-bottom:20px;">Atlanta, GA 30318</div>
+            <div style="
+              background:var(--yellow);
+              color:var(--black);
+              font-family:'Barlow Condensed',sans-serif;
+              font-weight:800;
+              font-size:15px;
+              letter-spacing:1px;
+              text-transform:uppercase;
+              padding:12px 28px;
+              display:inline-block;
+            ">🗺️ Get Directions</div>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">WESTSIDE <span>ATLANTA</span> TOWING</div>
+  <ul class="footer-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#why">About</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="tel:7702760159">Call Now</a></li>
+  </ul>
+  <div class="footer-copy">
+    © 2026 Westside Atlanta Towing · 754 Paines Ave NW STE 101, Atlanta, GA 30318 · <a href="tel:7702760159" style="color: var(--yellow); text-decoration:none;">770-276-0159</a>
+  </div>
+</footer>
+
+<!-- FLOATING CALL BUTTON -->
+<a href="tel:7702760159" class="float-call">📞 CALL NOW</a>
+
+</body>
+</html>
